@@ -204,7 +204,6 @@ function App() {
             <span className="box-side" />
           </button>
           <p className="pull-hint">
-            <span aria-hidden="true">↑</span>
             {phase === 'ready'
               ? '첫 클릭과 함께 타이머가 시작돼요'
               : '빠르게 클릭해 티슈를 모두 뽑으세요'}
