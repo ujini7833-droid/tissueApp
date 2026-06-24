@@ -950,7 +950,7 @@ a {
 
   .playground {
     top: auto;
-    bottom: 88px;
+    bottom: 112px;
     left: 50%;
     width: min(100%, 480px);
     transform: translateX(-50%) scale(0.88);
@@ -990,7 +990,7 @@ a {
 
 @media (max-width: 520px) {
   .result-overlay {
-    padding: max(28px, calc(env(safe-area-inset-top) + 18px)) 18px 18px;
+    padding: max(18px, calc(env(safe-area-inset-top) + 18px)) 18px 25px;
   }
 
   .result-card {
@@ -1035,7 +1035,7 @@ a {
   }
 
   .playground {
-    bottom: 46px;
+    bottom: 70px;
     transform: translateX(-50%) scale(0.75);
   }
 }
@@ -1051,7 +1051,7 @@ a {
   }
 
   .playground {
-    bottom: 4px;
+    bottom: 28px;
     transform: translateX(-50%) scale(0.7);
   }
 }
