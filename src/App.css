@@ -455,6 +455,12 @@ a {
   transform: translateY(-2px);
 }
 
+.result-actions button:disabled {
+  cursor: default;
+  opacity: 0.58;
+  transform: none;
+}
+
 .primary-action {
   border: 1px solid var(--pink-deep);
   color: #fff;
@@ -903,6 +909,16 @@ a {
 }
 
 @media (max-width: 900px) {
+  .result-overlay {
+    align-items: start;
+    padding-top: max(34px, calc(env(safe-area-inset-top) + 34px));
+  }
+
+  .result-card {
+    width: min(390px, 100%);
+    padding: 34px 28px 30px;
+  }
+
   .topbar {
     width: calc(100% - 32px);
     padding-top: 20px;
@@ -973,6 +989,18 @@ a {
 }
 
 @media (max-width: 480px) {
+  .result-overlay {
+    padding: max(28px, calc(env(safe-area-inset-top) + 28px)) 18px 18px;
+  }
+
+  .result-card {
+    padding: 28px 22px 24px;
+  }
+
+  .result-actions {
+    margin-top: 34px;
+  }
+
   .brand {
     font-size: 17px;
   }

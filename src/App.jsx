@@ -40,6 +40,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [phase, setPhase] = useState('select')
   const [elapsed, setElapsed] = useState(0)
+  const [resultActionsReady, setResultActionsReady] = useState(false)
   const boxRef = useRef(null)
   const countRef = useRef(0)
   const startTimeRef = useRef(null)
@@ -57,11 +58,22 @@ function App() {
     return () => cancelAnimationFrame(animationFrameRef.current)
   }, [phase])
 
+  useEffect(() => {
+    if (phase !== 'complete') return undefined
+
+    const actionTimer = window.setTimeout(() => {
+      setResultActionsReady(true)
+    }, 650)
+
+    return () => window.clearTimeout(actionTimer)
+  }, [phase])
+
   const chooseTarget = (amount) => {
     setTarget(amount)
     setCount(0)
     countRef.current = 0
     setElapsed(0)
+    setResultActionsReady(false)
     startTimeRef.current = null
     setTissues([])
     setPhase('ready')
@@ -72,6 +84,7 @@ function App() {
     setCount(0)
     countRef.current = 0
     setElapsed(0)
+    setResultActionsReady(false)
     startTimeRef.current = null
     setTissues([])
     setPhase('select')
@@ -226,10 +239,20 @@ function App() {
             </div>
             <p>한 장당 평균 {formatTime(elapsed / target)}초</p>
             <div className="result-actions">
-              <button type="button" className="primary-action" onClick={retryGame}>
+              <button
+                type="button"
+                className="primary-action"
+                onClick={retryGame}
+                disabled={!resultActionsReady}
+              >
                 같은 장수로 다시
               </button>
-              <button type="button" className="secondary-action" onClick={resetGame}>
+              <button
+                type="button"
+                className="secondary-action"
+                onClick={resetGame}
+                disabled={!resultActionsReady}
+              >
                 다른 장수 선택
               </button>
             </div>
