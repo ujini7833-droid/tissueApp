@@ -173,11 +173,6 @@ function App() {
           <br />
           <em>남았어요.</em>
         </h1>
-        <p className="description">
-          박스를 클릭할 때마다 한 장씩 날아가요.
-          <br />
-          리듬을 타고 촤르르 뽑아보세요.
-        </p>
       </section>
 
       <section className="playground" aria-label="각티슈 챌린지">
