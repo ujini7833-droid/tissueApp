@@ -950,7 +950,7 @@ a {
 
   .playground {
     top: auto;
-    bottom: 112px;
+    bottom: 88px;
     left: 50%;
     width: min(100%, 480px);
     transform: translateX(-50%) scale(0.88);
@@ -1035,7 +1035,7 @@ a {
   }
 
   .playground {
-    bottom: 70px;
+    bottom: 104px;
     transform: translateX(-50%) scale(0.75);
   }
 }
@@ -1051,8 +1051,14 @@ a {
   }
 
   .playground {
-    bottom: 28px;
+    bottom: 4px;
     transform: translateX(-50%) scale(0.7);
+  }
+}
+
+@media (max-height: 700px) and (max-width: 520px) {
+  .playground {
+    bottom: 54px;
   }
 }
 
